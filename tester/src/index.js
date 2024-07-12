@@ -1,34 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import Login from "./components/Login";
 import Error from "./components/Error";
-import LogoutHandler from "./components/LogoutHandler"
 import Header from "./components/Header";
+import Login from "./components/Login";
+import LogoutHandler from "./components/LogoutHandler";
+import "./index.css";
 
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const clientId = '443652869740-1df41cf4e6ikli26qdtg784qcefdf1lu.apps.googleusercontent.com'; // Replace with your actual client ID
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <Header />,
-    // children: [
-    //   {
-    //     path: "/",
-    //     element: <Login />,
-    //   },
-    // ],
     errorElement: <Error />,
-  },{
+  },
+  {
     path: "/login",
-    element:<Login/>
-  },{
+    element: <Login />,
+  },
+  {
     path: "/logout",
-    element: <LogoutHandler/>
-  }
+    element: <LogoutHandler />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <GoogleOAuthProvider clientId={clientId}>
+    <RouterProvider router={appRouter} />
+  </GoogleOAuthProvider>
+);

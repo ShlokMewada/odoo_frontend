@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import GoogleAuth from "./GoogleAuth";
+
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -70,6 +72,9 @@ const Login = () => {
 
         <button type="submit">Login</button>
       </form>
+      <div>
+        <GoogleAuth/>
+      </div>
     </div>
   );
 };

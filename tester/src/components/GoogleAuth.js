@@ -1,12 +1,10 @@
 import { GoogleLogin } from '@react-oauth/google';
-import { jwtDecode } from 'jwt-decode'; // Importing jwtDecode as default import
+import { jwtDecode } from 'jwt-decode';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './AuthContext';
 
 function GoogleAuth() {
-  const navigate = useNavigate(); // Hook for navigation
-  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const sendTokenToBackend = async (idToken) => {
     try {
@@ -18,16 +16,19 @@ function GoogleAuth() {
         body: JSON.stringify({ id_token: idToken }),
       });
 
-      if (!response.ok) {
+      const data = await response.json();
+      if (response.ok) {
+        // Save tokens to localStorage
+        localStorage.setItem("access_token", data.tokens.access);
+
+        // Redirect to the path saved in localStorage or to the home page
+        const redirectPath = localStorage.getItem("redirectAfterLogin") || "/";
+        localStorage.removeItem("redirectAfterLogin");
+        console.log('Login successful');
+        navigate(redirectPath);
+      } else {
         throw new Error('Failed to login with Google');
       }
-
-      const data = await response.json();
-      console.log('Login successful:', data);
-
-      // Handle successful login, e.g., save tokens, redirect, etc.
-      login(data.user); // Assuming the backend sends the user data
-      navigate('/home'); // Redirect to the home page
     } catch (error) {
       console.error('Error sending token to backend:', error);
     }
