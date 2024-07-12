@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import Error from "./components/Error";
 import Header from "./components/Header";
 import Login from "./components/Login";
-import LogoutHandler from "./components/LogoutHandler";
 import "./index.css";
 
 import { GoogleOAuthProvider } from '@react-oauth/google';
@@ -20,10 +19,6 @@ const appRouter = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
-  },
-  {
-    path: "/logout",
-    element: <LogoutHandler />,
   },
 ]);
 
