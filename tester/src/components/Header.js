@@ -1,101 +1,58 @@
-// import React, { useEffect, useState } from "react";
-// import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-// import Login from "./Login";
-// import { useNavigate } from "react-router-dom";
-
-// const Header = () => {
-//   const [message, setMessage] = useState();
-
-//   const [statusCode, setStatusCode] = useState(null);
-
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     fetchData();
-//   }, []);
-
-//   const fetchData = async () => {
-//     const data = await fetch("http://localhost:8000/pilot/users/protected/", {
-//       method: "GET",
-//       headers: {
-
-//         "Content-Type": "application/json",
-//         'Authorization': `Bearer ${localStorage.getItem('access_token')}`
-//       },
-//     });
-
-//     const json = await data.json();
-
-//     setMessage(json.message);
-
-//     setStatusCode(json.status);
-
-//     console.log(json);
-//   };
-
-//   if (statusCode === 401) {
-//     navigate("/Login");
-//   }
-//   return (
-//     <div>
-//       <h1>{message}</h1>
-//     </div>
-//   );
-// };
-
-// export default Header;
-
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Login from "./Login";
 import { useNavigate } from "react-router-dom";
 
-
 const Header = () => {
-  const navigate = useNavigate()
-
-  const [message, setMessage] = useState();
-
-  const [statusCode, setStatusCode] = useState(null);
+  const navigate = useNavigate();
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
+    setIsLoading(true);
     try {
-      const data = await fetch("https://odoo.detrace.systems/users/protected/", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          'Authorization': `Bearer ${localStorage.getItem('access_token')}`
-        },
-      })
-      
+      const response = await fetch(
+        "https://odoo.detrace.systems/users/protected/",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+        }
+      );
+      if (response.status === 403) {
+        // Unauthorized, redirect to login
+        localStorage.setItem("redirectAfterLogin", window.location.pathname);
+        navigate("/login");
+        return;
+      }
+
+      const json = await response.json();
+      setMessage(json.message);
     } catch (error) {
-      navigate("/login")
-      
+      console.error("Error fetching data:", error);
+      // If there's a network error or other issues, you might want to show an error message
+      setMessage("An error occurred while fetching data.");
+    } finally {
+      setIsLoading(false);
     }
-    
-    
-    // const json = await data.json();
-    // console.log(json)
-
-    // setMessage(json.message);
-
-    // setStatusCode(json.status);
-
-    // console.log(json);
   };
 
-  console.log(statusCode)
+  const handleLogout = () => {
+    localStorage.removeItem("access_token");
+    navigate("/login");
+  };
 
-  if (statusCode === 401) {
-    navigate("/Login");
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
+
   return (
     <div>
-    <button onClick={()=>navigate("/login")}>ABC</button>
+      <button onClick={handleLogout}>Logout</button>
       <h1>{message}</h1>
     </div>
   );
