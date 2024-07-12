@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../Header.css"
+import "../Header.css";
 import { Link } from "react-router-dom";
+import { UserContext } from "./UserContext";
+import { useContext } from "react";
 
-const Header = ({user,setUser}) => {
+const Header = () => {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -29,7 +31,7 @@ const Header = ({user,setUser}) => {
       if (response.status === 403) {
         // Unauthorized, redirect to login
         localStorage.setItem("redirectAfterLogin", window.location.pathname);
-        navigate("/login");
+        // navigate("/login");
         return;
       }
 
@@ -46,7 +48,8 @@ const Header = ({user,setUser}) => {
 
   const handleLogout = () => {
     localStorage.removeItem("access_token");
-    navigate("/login");
+    setUser(null);
+    // navigate("/login");
   };
 
   if (isLoading) {
@@ -62,7 +65,15 @@ const Header = ({user,setUser}) => {
     <header className="header">
       <div className="top-bar">
         <nav className="top-nav">
-          <Link to="/login">Log in</Link>
+          {user != null ? (
+            <div onClick={handleLogout} className="header-div">
+              logout
+            </div>
+          ) : (
+            <div>
+              <Link to="/login">login</Link>/<Link to="/signup">signup</Link>
+            </div>
+          )}
         </nav>
         <div className="logo">Dummy</div>
         <div className="right-nav">

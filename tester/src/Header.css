@@ -159,3 +159,7 @@
   .more-dropdown:hover .more-dropdown-content {
     display: block;
   }
+
+  .header-div{
+    cursor: pointer;
+  }

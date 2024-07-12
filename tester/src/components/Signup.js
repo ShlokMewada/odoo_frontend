@@ -1,19 +1,17 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import GoogleAuth from "./GoogleAuth";
-import { UserContext } from './UserContext';
-import { useContext } from "react";
+import { UserContext } from "./UserContext";
+import { useContext, useNavigate, useState } from "react";
 
-
-const Login = () => {
+const Signup = () => {
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
+    email: "",
+    name: "",
   });
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch(
@@ -36,21 +34,21 @@ const Login = () => {
         localStorage.removeItem("redirectAfterLogin");
         navigate(redirectPath);
       } else {
-        alert(data.detail);
+        // alert(data.detail);
 
         // Handle login error
-        console.error("Login failed");
+        console.error("Signup failed");
         // You might want to show an error message to the user
       }
     } catch (error) {
-      console.error("Login error:", error);
+      console.error("Signup error:", error);
       // Handle network errors
     }
   };
 
   return (
     <div className="login-container">
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSignup}>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
@@ -73,14 +71,33 @@ const Login = () => {
             placeholder="Password"
           />
         </div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            value={credentials.email}
+            onChange={(e) =>
+              setCredentials({ ...credentials, email: e.target.value })
+            }
+            placeholder="Email"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            value={credentials.name}
+            onChange={(e) =>
+              setCredentials({ ...credentials, name: e.target.value })
+            }
+            placeholder="Name"
+          />
+        </div>
 
-        <button type="submit">Login</button>
+        <button type="submit">Signup</button>
       </form>
-      <div>
-        <GoogleAuth/>
-      </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

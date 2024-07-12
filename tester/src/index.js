@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Login from "./components/Login";
 import { UserProvider } from './components/UserContext';
 import "./index.css";
+import Signup from './components/Signup';
 
 const clientId = '443652869740-1df41cf4e6ikli26qdtg784qcefdf1lu.apps.googleusercontent.com'; // Replace with your actual client ID
 
@@ -20,6 +21,10 @@ const appRouter = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+  {
+    path: "/signup",
+    element: <Signup />,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
