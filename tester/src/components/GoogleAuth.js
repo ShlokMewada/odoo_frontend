@@ -1,10 +1,13 @@
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from './UserContext';
 
 function GoogleAuth() {
   const navigate = useNavigate();
+  const { setUser } = useContext(UserContext); // Use context to set user
+
 
   const sendTokenToBackend = async (idToken) => {
     try {
@@ -20,6 +23,7 @@ function GoogleAuth() {
       if (response.ok) {
         // Save tokens to localStorage
         localStorage.setItem("access_token", data.tokens.access);
+        setUser(data.user);
 
         // Redirect to the path saved in localStorage or to the home page
         const redirectPath = localStorage.getItem("redirectAfterLogin") || "/";
@@ -37,7 +41,7 @@ function GoogleAuth() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Google Auth</p>
+        <p>SignIn Using Google</p>
         <span>
           <GoogleLogin
             onSuccess={(credentialResponse) => {
