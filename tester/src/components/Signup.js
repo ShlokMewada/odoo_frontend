@@ -1,5 +1,6 @@
 import { UserContext } from "./UserContext";
-import { useContext, useNavigate, useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({
@@ -15,7 +16,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://odoo.detrace.systems/users/api/token/",
+        "https://odoo.detrace.systems/users/signup/",
         {
           method: "POST",
           headers: {

@@ -65,6 +65,7 @@ const Header = () => {
     <header className="header">
       <div className="top-bar">
         <nav className="top-nav">
+          {console.log(user)}
           {user != null ? (
             <div onClick={handleLogout} className="header-div">
               logout
@@ -78,7 +79,7 @@ const Header = () => {
         <div className="logo">Dummy</div>
         <div className="right-nav">
           <a href="#user profile" className="user">
-            Hello, User
+            Hello, {user!=null ? user.name: "User"}
           </a>
           <div className="cart">
             <a href="#cart" className="cart-details">
