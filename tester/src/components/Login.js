@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://odoo.detrace.systems/users/api/token/",
+        "https://odoo.detrace.systems/api/users/api/token/",
         {
           method: "POST",
           headers: {

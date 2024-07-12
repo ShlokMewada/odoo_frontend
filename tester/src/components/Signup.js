@@ -16,7 +16,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://odoo.detrace.systems/users/signup/",
+        "https://odoo.detrace.systems/api/users/signup/",
         {
           method: "POST",
           headers: {

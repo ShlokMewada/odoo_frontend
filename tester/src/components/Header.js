@@ -19,7 +19,7 @@ const Header = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://odoo.detrace.systems/users/protected/",
+        "https://odoo.detrace.systems/api/users/protected/",
         {
           method: "GET",
           headers: {
@@ -77,19 +77,13 @@ const Header = () => {
           )}
         </nav>
         <div className="logo">Dummy</div>
-        <div className="right-nav">
-          <a href="#user profile" className="user">
-            Hello, {user!=null ? user.name: "User"}
-          </a>
-          <div className="cart">
-            <a href="#cart" className="cart-details">
-              <i className="cart-icon">🛒</i>
-            </a>
-            <a href="#cart" className="cart-details">
-              <span className="cart-count">0</span>
-            </a>
+        {user != null ? (
+          <div className="right-nav">
+            <div className="user">Hello {user.name}</div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
       </div>
       <div className="search-bar">
         <input
@@ -100,6 +94,7 @@ const Header = () => {
       </div>
       <nav className="bottom-nav">
         <a href="">Home</a>
+        <Link to="/userprofile">UserProfile</Link>
         <a href="">About Us</a>
         <a href="">Contact Us</a>
         <a href="">Cart</a>

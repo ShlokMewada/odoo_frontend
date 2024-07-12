@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import { UserProvider } from './components/UserContext';
 import "./index.css";
 import Signup from './components/Signup';
+import UserProfile from './components/UserProfile';
 
 const clientId = '443652869740-1df41cf4e6ikli26qdtg784qcefdf1lu.apps.googleusercontent.com'; // Replace with your actual client ID
 
@@ -24,6 +25,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
+  },
+  {
+    path: "/userprofile",
+    element: <UserProfile />,
   }
 ]);
 

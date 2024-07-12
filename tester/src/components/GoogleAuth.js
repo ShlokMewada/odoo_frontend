@@ -11,7 +11,7 @@ function GoogleAuth() {
 
   const sendTokenToBackend = async (idToken) => {
     try {
-      const response = await fetch('https://odoo.detrace.systems/users/google-auth/', {
+      const response = await fetch('https://odoo.detrace.systems/api/users/google-auth/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
