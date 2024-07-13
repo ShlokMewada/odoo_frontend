@@ -9,27 +9,31 @@ import { UserProvider } from './components/UserContext';
 import "./index.css";
 import Signup from './components/Signup';
 import UserProfile from './components/UserProfile';
+import App from './App';
 
 const clientId = '443652869740-1df41cf4e6ikli26qdtg784qcefdf1lu.apps.googleusercontent.com'; // Replace with your actual client ID
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Header />,
+    element: <App />,
     errorElement: <Error />,
+    children:[
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "/userprofile",
+        element: <UserProfile />,
+      }
+    ]
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
-  },
-  {
-    path: "/userprofile",
-    element: <UserProfile />,
-  }
+  
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

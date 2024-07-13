@@ -202,7 +202,7 @@ const UserProfile = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", position: "relative", marginTop: "150px" }}>
       <h2>User Profile</h2>
       <form onSubmit={handleSubmit}>
         <div>
