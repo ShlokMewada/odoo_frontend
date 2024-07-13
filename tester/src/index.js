@@ -10,6 +10,7 @@ import "./index.css";
 import Signup from './components/Signup';
 import UserProfile from './components/UserProfile';
 import App from './App';
+import "./main.css";
 
 const clientId = '443652869740-1df41cf4e6ikli26qdtg784qcefdf1lu.apps.googleusercontent.com'; // Replace with your actual client ID
 
