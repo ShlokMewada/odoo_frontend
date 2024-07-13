@@ -126,8 +126,7 @@ const UserProfile = () => {
       const data = await response.json();
 
       if (response.ok ) {
-        setUser(data.user);
-        console.log("User:", data.user);
+        setUser(data.user);  // Update user context with new data
         setFormData(data.user);
       } else if (response.status === 403) {
         localStorage.setItem("redirectAfterLogin", window.location.pathname);
