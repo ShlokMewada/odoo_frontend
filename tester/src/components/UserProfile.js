@@ -138,6 +138,7 @@ const UserProfile = () => {
 
       if (response.ok) {
         localStorage.setItem("user", JSON.stringify(data.user)); // Update user context with new data
+        setUser(data.user)
         setFormData(data.user);
       } else if (response.status === 403) {
         localStorage.setItem("redirectAfterLogin", window.location.pathname);
@@ -180,7 +181,9 @@ const UserProfile = () => {
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem("user", data.user); // Update user context with new data
+        localStorage.setItem("user", JSON.stringify(data.user));
+         // Update user context with new data
+         setUser(data.user)
         setFormData(data.user);
         alert("Profile updated successfully!");
       } else if (response.status === 403) {
