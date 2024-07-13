@@ -21,18 +21,18 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
     children:[
       {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/signup",
-        element: <Signup />,
-      },
-      {
         path: "/userprofile",
         element: <UserProfile />,
       }
     ]
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
   },
   
 ]);

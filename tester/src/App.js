@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate, Outlet } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
 import Header from "./components/Header";
 import Login from "./components/Login";
 
@@ -12,27 +18,11 @@ const PrivateRoute = ({ children }) => {
   return children;
 };
 
-
 const App = () => {
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route path="/login" element={<Login />} />
-    //     <Route
-    //       path="/"
-    //       element={
-    //         <PrivateRoute>
-    //           <Header user={user}/>
-    //         </PrivateRoute>
-    //       }
-    //     />
-    //     {/* Add other routes as needed */}
-    //   </Routes>
-    // </Router>
-
     <div>
-      <Header/>
-      <Outlet/>
+      <Header />
+      <Outlet />
     </div>
   );
 };

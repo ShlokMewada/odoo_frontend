@@ -37,7 +37,7 @@ const Login = () => {
         localStorage.removeItem("redirectAfterLogin");
         navigate(redirectPath);
       } else {
-        alert(data.detail);
+        alert(data.message);
 
         // Handle login error
         console.error("Login failed");
