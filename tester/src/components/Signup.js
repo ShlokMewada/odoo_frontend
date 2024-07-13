@@ -10,6 +10,8 @@ const Signup = () => {
     name: "",
   });
   const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
+
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -30,6 +32,7 @@ const Signup = () => {
       if (response.ok) {
         localStorage.setItem("access_token", data.tokens.access);
         localStorage.setItem("user",JSON.stringify(data.user))
+        setUser(data.user)
         const redirectPath = localStorage.getItem("redirectAfterLogin") || "/";
         localStorage.removeItem("redirectAfterLogin");
         navigate(redirectPath);
