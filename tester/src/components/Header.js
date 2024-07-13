@@ -120,7 +120,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  // const { user, setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   // let user = localStorage.getItem("user");
   const getObjectFromLocalStorage = (key) => {
     const storedItem = localStorage.getItem(key);

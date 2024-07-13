@@ -116,7 +116,7 @@ const UserProfile = () => {
   // Example usage
   const storedUser = getObjectFromLocalStorage('user');
   console.log(storedUser);
-  const { user, setUser } = useState(storedUser)
+  const { user, setUser } = useContext(UserContext)
 
   useEffect(() => {
     fetchUserProfile();

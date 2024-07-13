@@ -6,6 +6,7 @@ import { UserContext } from './UserContext';
 
 function GoogleAuth() {
   const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
 
   const sendTokenToBackend = async (idToken) => {
     try {
@@ -23,6 +24,7 @@ function GoogleAuth() {
         console.log(data)
         localStorage.setItem("access_token", data.tokens.access);
         localStorage.setItem("user",JSON.stringify(data.user))
+        setUser(data.user)
         // const userData = localStorage.getItem("user")
         // console.log(JSON.parse(userData))
         // Redirect to the path saved in localStorage or to the home page
