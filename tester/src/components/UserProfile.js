@@ -96,16 +96,27 @@
 
 // export default UserProfile;
 
-
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "./UserContext";
 import { useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
-  const { user, setUser } = useContext(UserContext);
   const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  // const userData = localStorage.getItem("user");
+  const getObjectFromLocalStorage = (key) => {
+    const storedItem = localStorage.getItem(key);
+    if (storedItem) {
+      return JSON.parse(storedItem);
+    }
+    return null;
+  };
+  
+  // Example usage
+  const storedUser = getObjectFromLocalStorage('user');
+  console.log(storedUser);
+  const { user, setUser } = useState(storedUser)
 
   useEffect(() => {
     fetchUserProfile();
@@ -125,8 +136,8 @@ const UserProfile = () => {
 
       const data = await response.json();
 
-      if (response.ok ) {
-        setUser(data.user);  // Update user context with new data
+      if (response.ok) {
+        localStorage.setItem("user", JSON.stringify(data.user)); // Update user context with new data
         setFormData(data.user);
       } else if (response.status === 403) {
         localStorage.setItem("redirectAfterLogin", window.location.pathname);
@@ -143,9 +154,9 @@ const UserProfile = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -168,8 +179,8 @@ const UserProfile = () => {
 
       const data = await response.json();
 
-      if (response.ok ) {
-        setUser(data.user);  // Update user context with new data
+      if (response.ok) {
+        localStorage.setItem("user", data.user); // Update user context with new data
         setFormData(data.user);
         alert("Profile updated successfully!");
       } else if (response.status === 403) {
