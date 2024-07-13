@@ -1,6 +1,6 @@
-import { UserContext } from "./UserContext";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "./UserContext";
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({
@@ -9,12 +9,40 @@ const Signup = () => {
     email: "",
     name: "",
   });
+  const [errors, setErrors] = useState({});
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
-  const { user, setUser } = useContext(UserContext);
 
+  const validate = () => {
+    const newErrors = {};
+
+    if (!credentials.username) {
+      newErrors.username = "Username is required";
+    } else if (credentials.username.length < 6 || credentials.username.length > 16) {
+      newErrors.username = "Username must be between 6 and 16 characters";
+    }
+    if (!credentials.password) newErrors.password = "Password is required";
+    if (!credentials.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(credentials.email)) {
+      newErrors.email = "Email address is invalid";
+    }
+    if (!credentials.name) {
+      newErrors.name = "Name is required";
+    } else if (credentials.name.length <= 2) {
+      newErrors.name = "Name must be greater than 2 characters";
+    }
+
+    return newErrors;
+  };
 
   const handleSignup = async (e) => {
     e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
     try {
       const response = await fetch(
         "https://odoo.detrace.systems/api/users/signup/",
@@ -38,14 +66,27 @@ const Signup = () => {
         navigate(redirectPath);
       } else {
         // alert(data.detail);
-
+        //setErrors(data.errors || {});
         // Handle login error
-        console.error("Signup failed");
+        //console.error("Signup failed",data.errors);
         // You might want to show an error message to the user
+        // Handle backend validation errors
+        const backendErrors = data.errors || {};
+
+        // Add general error message if available
+        if (data.message && data.message.includes("Key (username)")) {
+          backendErrors.username = "User already exists";
+        } else {
+          backendErrors.general = data.message;
+        }
+
+        setErrors(backendErrors);
+        console.error("Signup failed", backendErrors);
       }
     } catch (error) {
       console.error("Signup error:", error);
       // Handle network errors
+      setErrors({ network: "Network error, please try again later." });
     }
   };
 
@@ -62,6 +103,7 @@ const Signup = () => {
             }
             placeholder="Username"
           />
+          {errors.username && <span className="error">{errors.username}</span>}
         </div>
         <div className="form-group">
           <label htmlFor="password">Password:</label>
@@ -73,6 +115,7 @@ const Signup = () => {
             }
             placeholder="Password"
           />
+          {errors.password && <span className="error">{errors.password}</span>}
         </div>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
@@ -84,6 +127,7 @@ const Signup = () => {
             }
             placeholder="Email"
           />
+          {errors.email && <span className="error">{errors.email}</span>}
         </div>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -95,8 +139,10 @@ const Signup = () => {
             }
             placeholder="Name"
           />
+          {errors.name && <span className="error">{errors.name}</span>}
         </div>
-
+        {errors.network && <span className="error">{errors.network}</span>}
+        {errors.general && <span className="error">{errors.general}</span>}
         <button type="submit">Signup</button>
       </form>
     </div>
