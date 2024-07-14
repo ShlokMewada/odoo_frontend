@@ -19,7 +19,7 @@ const clientId = '443652869740-1df41cf4e6ikli26qdtg784qcefdf1lu.apps.googleuserc
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App/>,
     errorElement: <Error />,
     children:[
       {
