@@ -13,6 +13,7 @@ import App from './App';
 import "./main.css";
 import Forbidden from './components/Forbidden';
 import Home from './components/Home';
+import AboutUs from './components/AboutUs';
 
 const clientId = '443652869740-1df41cf4e6ikli26qdtg784qcefdf1lu.apps.googleusercontent.com'; // Replace with your actual client ID
 
@@ -43,6 +44,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/forbidden",
     element: <Forbidden/>
+  },
+  {
+    path: "/about",
+    element: <AboutUs/>
   }
   
 ]);

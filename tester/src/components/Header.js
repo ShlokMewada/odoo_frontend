@@ -64,7 +64,7 @@ const Header = () => {
       <nav className="bottom-nav">
         <Link to="/home">Home</Link>
         {userData != null ? <Link to="/userprofile">UserProfile</Link> : ""}
-        <a href="">About Us</a>
+        <Link to="/about">AboutUs</Link>
         <a href="">Contact Us</a>
         <a href="">Cart</a>
         <div className="more-dropdown">
