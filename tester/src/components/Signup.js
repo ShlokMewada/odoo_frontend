@@ -103,6 +103,7 @@ const Signup = () => {
           <label htmlFor="name">Name:</label>
           <input
             type="text"
+            className="credentials"
             value={credentials.name}
             onChange={(e) =>
               setCredentials({ ...credentials, name: e.target.value })
@@ -115,6 +116,7 @@ const Signup = () => {
           <label htmlFor="username">Username:</label>
           <input
             type="text"
+            className="credentials"
             value={credentials.username}
             onChange={(e) =>
               setCredentials({ ...credentials, username: e.target.value })
@@ -127,6 +129,7 @@ const Signup = () => {
           <label htmlFor="password">Password:</label>
           <input
             type="password"
+            className="credentials"
             value={credentials.password}
             onChange={(e) =>
               setCredentials({ ...credentials, password: e.target.value })
@@ -139,6 +142,7 @@ const Signup = () => {
           <label htmlFor="email">Email:</label>
           <input
             type="email"
+            className="credentials"
             value={credentials.email}
             onChange={(e) =>
               setCredentials({ ...credentials, email: e.target.value })
@@ -151,6 +155,7 @@ const Signup = () => {
           <label htmlFor="role">Role:</label>
           <select
             id="role"
+            className="credentials"
             value={credentials.role}
             onChange={(e) =>
               setCredentials({ ...credentials, role: e.target.value })

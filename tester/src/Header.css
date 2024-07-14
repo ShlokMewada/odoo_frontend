@@ -94,35 +94,6 @@
     cursor: pointer;
   }
   
-  .search-bar {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    margin-top: 30px;
-  }
-  
-  .search-input {
-    width: 400px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-  }
-  
-  .search-dropdown {
-    border: 1px solid #ccc;
-    border-radius: 0 4px 4px 0;
-    padding: 10px;
-  }
-  
-  .search-dropdown:hover{
-    cursor: pointer;
-  }
-  
-  .search-dropdown-item{
-    font-size: 15px;
-    border-bottom: 1px solid black;
-  }
-  
   .bottom-nav {
     margin-top: 40px;
     display: flex;

@@ -61,6 +61,7 @@ const Login = () => {
           <label htmlFor="username" >Username:</label>
           <input
             type="text"
+            className="credentials"
             value={credentials.username}
             onChange={(e) =>
               setCredentials({ ...credentials, username: e.target.value })
@@ -72,6 +73,7 @@ const Login = () => {
           <label htmlFor="password">Password:</label>
           <input
             type="password"
+            className="credentials"
             value={credentials.password}
             onChange={(e) =>
               setCredentials({ ...credentials, password: e.target.value })

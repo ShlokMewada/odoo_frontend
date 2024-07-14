@@ -52,7 +52,7 @@ label {
   margin-right: 285px;
 }
 
-input {
+.credentials {
   width: 50%;
   height: 30px;;
   padding: 8px;
@@ -60,20 +60,6 @@ input {
   border: 1px solid #000000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
 }
 
 .links {
@@ -95,7 +81,7 @@ button:hover {
 .submit-button{
   color: green;
   margin-left: 185px;
-  margin-top: 20px;
+  margin-top: 20px; 
   height: 30px;
   width: 100px;
   border: 2px solid green;
@@ -144,3 +130,27 @@ button:hover {
   color: black;
 }
 
+.search-bar{
+  margin-top: -200px;
+}
+
+.search-input {
+  width: 500px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.search-button{
+  color: red;
+  border: 1px solid red;
+  margin-left: 10px;
+  border-radius: 5px;
+  height: 30px;
+  width: 80px;
+}
+
+.search-button:hover{
+  color: white;
+  background-color: red;
+}

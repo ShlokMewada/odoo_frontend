@@ -17,7 +17,16 @@ const Home = () => {
 
     fetchData();
   }, []);
-  return <div></div>;
+  return (
+    <div className="search-bar">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search millions of books, publishers, authors......"
+        />
+        <button className="search-button">Search</button>
+      </div>
+  );
 };
 
 export default Home;
