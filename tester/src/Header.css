@@ -147,4 +147,46 @@
     cursor: pointer;
   }
 
+  .books-container {
+    margin-top: 400px; /* Adjust based on the height of your navbar */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
   
+  .book-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px; /* Adjust as needed */
+    text-align: center;
+  }
+  
+  .book-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .book-details {
+    padding: 10px;
+  }
+  
+  .book-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .book-author {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 10px;
+  }
+  
+  .book-description {
+    font-size: 14px;
+    color: black;
+  }
