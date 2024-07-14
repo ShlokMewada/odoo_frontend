@@ -62,7 +62,7 @@ const Header = () => {
         />
       </div> */}
       <nav className="bottom-nav">
-        <a href="">Home</a>
+        <Link to="/home">Home</Link>
         {userData != null ? <Link to="/userprofile">UserProfile</Link> : ""}
         <a href="">About Us</a>
         <a href="">Contact Us</a>
