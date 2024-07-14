@@ -56,17 +56,17 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto px-4">
-      <div className="search-bar mb-8">
+    <div className="container">
+      <div className="search-bar">
         <input
           type="text"
-          className="search-input w-full p-2 border rounded"
+          className="search-input"
           placeholder="Search by Title, Author, or Category"
           value={searchTerm}
           onChange={handleSearch}
         />
       </div>
-      <h1 className="text-2xl font-bold mb-4">All Books</h1>
+      <h1 className="all">All Books</h1>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (

@@ -141,33 +141,73 @@ h2 {
   color: black;
 }
 
-.search-bar{
-  margin-top: -200px;
-}
-
-.search-input {
-  width: 500px;
-  height: 30px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-.search-button{
-  color: red;
-  border: 1px solid red;
-  margin-left: 10px;
-  border-radius: 5px;
-  height: 30px;
-  width: 80px;
-}
-
-.search-button:hover{
-  color: white;
-  background-color: red;
-}
-
 .role-select{
   margin-top: 30px;
   margin-left: 187px;
   font-weight: bold;
+}
+.user-profile-container {
+  padding: 20px;
+  margin: 150px auto 0;
+  max-width: 600px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.user-profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 10px ;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
 }
