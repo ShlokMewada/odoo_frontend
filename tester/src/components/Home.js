@@ -66,7 +66,6 @@ const Home = () => {
           onChange={handleSearch}
         />
       </div>
-      <h1 className="all">All Books</h1>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (

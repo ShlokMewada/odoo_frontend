@@ -7,6 +7,8 @@
     top: 0px;
     left: 0%;
     right: 25%;
+    z-index: 1000;
+    background-color: white;
   }
   
   .top-bar {
@@ -123,38 +125,17 @@
     background-color: black;
   }
   
-  .more-dropdown {
-    position: relative;
-  }
-  
-  .more-dropdown a {
-    margin: 0;
-  }
-  
-  .more-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    z-index: 1;
-  }
-  
-  .more-dropdown:hover .more-dropdown-content {
-    display: block;
-  }
 
   .header-div{
     cursor: pointer;
   }
 
   .books-container {
-    position: absolute;
-    margin-top: 700px; 
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     padding: 20px;
-    z-index: 0;
+    
+     /* Adjust based on the height of your header and other elements */
   }
   
   .book-card {
@@ -202,6 +183,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
   }
   
   .search-input {
