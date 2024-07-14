@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BookCards = () => {
+const BookCards = ({bookData}) => {
   return (
     <div className="flex gap-2">
       <img src="" alt="" />
