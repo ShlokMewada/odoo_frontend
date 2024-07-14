@@ -141,33 +141,35 @@ h2 {
   color: black;
 }
 
-.search-bar{
-  margin-top: -200px;
-}
-
-.search-input {
-  width: 500px;
-  height: 30px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-.search-button{
-  color: red;
-  border: 1px solid red;
-  margin-left: 10px;
-  border-radius: 5px;
-  height: 30px;
-  width: 80px;
-}
-
-.search-button:hover{
-  color: white;
-  background-color: red;
-}
-
 .role-select{
   margin-top: 30px;
   margin-left: 187px;
   font-weight: bold;
+}
+
+.user-profile{
+  padding: 20px;
+  position: "relative";
+  margin-top: -250px;
+}
+
+.profile-title{
+  font-size: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  color: blue;
+}
+
+.profile-label{
+  font-size: 25px;
+  font-weight: 500;
+  color: red;
+}
+
+.save-profile-button{
+  margin-top: 20px;
+  border: 1px solid green;
+  color: green;
+  width: 100px;
+  height: 30px;
 }

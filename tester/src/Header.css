@@ -3,7 +3,7 @@
     font-family: Arial, sans-serif;
     /* margin-top: -220px; */
     /* margin-top: 40px; */
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0%;
     right: 25%;
@@ -148,7 +148,7 @@
   }
 
   .books-container {
-    margin-top: 600px; /* Adjust based on the height of your navbar */
+    margin-top: 700px; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -189,4 +189,32 @@
   .book-description {
     font-size: 14px;
     color: black;
+  }
+
+  .search-bar{
+    margin-top: -120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-input {
+    width: 500px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  .search-button{
+    color: red;
+    border: 1px solid red;
+    margin-left: 10px;
+    border-radius: 5px;
+    height: 30px;
+    width: 80px;
+  }
+  
+  .search-button:hover{
+    color: white;
+    background-color: red;
   }

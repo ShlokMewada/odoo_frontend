@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "./UserContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
 
 const UserProfile = () => {
   const [formData, setFormData] = useState({});
@@ -104,11 +104,11 @@ const UserProfile = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div style={{ padding: "20px", position: "relative", marginTop: "150px" }}>
-      <h2>User Profile</h2>
+    <div className="user-profile">
+      <h2 className="profile-title">User Profile</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Username: </label>
+          <label className="profile-label">Username: </label>
           <input
             type="text"
             name="username"
@@ -118,7 +118,7 @@ const UserProfile = () => {
           />
         </div>
         <div>
-          <label>Name: </label>
+          <label className="profile-label">Name: </label>
           <input
             type="text"
             name="name"
@@ -128,7 +128,7 @@ const UserProfile = () => {
           />
         </div>
         <div>
-          <label>Email: </label>
+          <label className="profile-label">Email: </label>
           <input
             type="email"
             name="email"
@@ -137,7 +137,7 @@ const UserProfile = () => {
             placeholder={user.email || "Enter email"}
           />
         </div>
-        <button type="submit" disabled={loading}>
+        <button type="submit" class="save-profile-button" disabled={loading}>
           {loading ? "Saving..." : "Save Profile"}
         </button>
       </form>
