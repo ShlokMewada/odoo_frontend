@@ -52,13 +52,13 @@ const Login = () => {
   return (
     <div className="login-container">
       <div style={{display:"flex"}}>
-        <p className="title">Public Library</p>
+        <p className="title">BookNest</p>
         <button className="home-button">Home</button>
       </div>
       <hr className="horizontal" />
       <form onSubmit={handleLogin}>
         <div className="form-group">
-          <label htmlFor="username" >Username:</label>
+          <label htmlFor="username" className="credential-title" >Username:</label>
           <input
             type="text"
             className="credentials"
@@ -70,7 +70,7 @@ const Login = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password" className="credential-title">Password:</label>
           <input
             type="password"
             className="credentials"

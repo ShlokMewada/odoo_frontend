@@ -7,10 +7,6 @@ body, html {
   align-items: center;
 }
 
-.username{
-  text-align: center;
-}
-
 .login-container {
   width: 800px;
   height: 600px;
@@ -23,10 +19,10 @@ body, html {
 }
 
 .signup-container {
-  width: 350px;
-  height: 500px;
+  width: 800px;
+  height: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
   border: 2px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
@@ -43,7 +39,7 @@ h2 {
   text-align: center;
 }
 
-label {
+.credential-title {
   margin-top: 20px;
   display: block;
   margin-bottom: 5px;
@@ -80,11 +76,18 @@ label {
 
 .submit-button{
   color: green;
-  margin-left: 185px;
+  margin-left: 187px;
   margin-top: 20px; 
-  height: 30px;
+  height: 35px;
   width: 100px;
   border: 2px solid green;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.submit-button:hover{
+  color: white;
+  background-color: green;
 }
 
 .google{
@@ -101,7 +104,12 @@ label {
 }
 
 .role-selection-container{
-  margin-left: 350px;
+  margin-left: 195px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  margin-top: 5px;
+  border-radius: 4px;
+  width: 85px;
 }
 
 .title{
@@ -110,10 +118,13 @@ label {
   color: blue;
   margin-bottom: 15px;
   width: 100%;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .home-button{
   color: red;
+  border-radius: 4px;
   margin-left: 185px;
   margin-top:2px;
   height: 30px;
@@ -153,4 +164,11 @@ label {
 .search-button:hover{
   color: white;
   background-color: red;
+}
+
+.role-select{
+  margin-top: 30px;
+  margin-left: 187px;
+  font-weight: bold;
+
 }

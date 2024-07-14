@@ -157,7 +157,7 @@ function GoogleAuth() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>Select Your Role</h2>
+        <p className="credential-title" style={{marginLeft: "190px"}}>Select Your Role:</p>
         <div className="role-selection-container">
           <select value={role} onChange={(e) => setRole(e.target.value)}>
             <option value="Customer">User</option>

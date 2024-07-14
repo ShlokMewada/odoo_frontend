@@ -96,11 +96,11 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
-      <p className="title">SIGNUP</p>
-      
+      <p className="title">BookNest</p>
+      <hr />
       <form onSubmit={handleSignup}>
       <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name" className="credential-title" style={{marginLeft: "-30px"}}>Name:</label>
           <input
             type="text"
             className="credentials"
@@ -113,7 +113,7 @@ const Signup = () => {
           {errors.name && <span className="error">{errors.name}</span>}
         </div>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username" className="credential-title">Username:</label>
           <input
             type="text"
             className="credentials"
@@ -126,7 +126,7 @@ const Signup = () => {
           {errors.username && <span className="error">{errors.username}</span>}
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password" className="credential-title">Password:</label>
           <input
             type="password"
             className="credentials"
@@ -139,7 +139,7 @@ const Signup = () => {
           {errors.password && <span className="error">{errors.password}</span>}
         </div>
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" className="credential-title" style={{marginLeft: "-32px"}}>Email:</label>
           <input
             type="email"
             className="credentials"
@@ -152,10 +152,11 @@ const Signup = () => {
           {errors.email && <span className="error">{errors.email}</span>}
         </div>
         <div className="form-group">
-          <label htmlFor="role">Role:</label>
+          <label htmlFor="role" className="credential-title">Role:</label>
           <select
             id="role"
             className="credentials"
+            style={{height: "40px"}}
             value={credentials.role}
             onChange={(e) =>
               setCredentials({ ...credentials, role: e.target.value })

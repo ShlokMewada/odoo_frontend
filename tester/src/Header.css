@@ -52,12 +52,17 @@
   }
   
   .login {
-    background-color: red;
-    color: white;
+    border: 1px solid red;
+    color: red;
     padding: 5px 10px;
-    border: none;
     border-radius: 4px;
     margin-right: 20px;
+    font-weight: bold;
+  }
+
+  .login:hover{
+    color: white;
+    background-color: red;
   }
   
   .user:hover{
