@@ -16,8 +16,8 @@ const BookCards = ({ data }) => {
           <div key={id} className="book-card">
             <img src={small_thumbnail} alt={title} className="book-img" />
             <div className="book-details">
-              <Link to="/"><h2 className="book-title text-blue-600">{title}</h2></Link>
-              <Link to="/"><p className="book-author text-blue-600">{authors}</p></Link>
+              <Link to="/bookdetails"><h2 className="book-title text-blue-600">{title}</h2></Link>
+              <p className="book-author">{authors}</p>
               <p className="book-description text-sm text-gray-700 line-clamp-3">{description}</p>
             </div>
           </div>
