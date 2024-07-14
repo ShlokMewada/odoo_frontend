@@ -65,6 +65,7 @@ const Header = () => {
         <Link to="/about">AboutUs</Link>
         <a href="">Contact Us</a>
         <a href="">Cart</a>
+        <Link to="/borrowing-history">BorrowingHistory</Link>
         <div className="more-dropdown">
           <a href="#more">More</a>
         </div>
