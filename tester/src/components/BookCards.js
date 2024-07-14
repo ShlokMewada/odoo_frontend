@@ -2,7 +2,7 @@ import React from 'react'
 
 const BookCards = () => {
   return (
-    <div className="">
+    <div className="flex">
       
     </div>
   )
