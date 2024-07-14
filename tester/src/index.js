@@ -11,6 +11,7 @@ import Signup from './components/Signup';
 import UserProfile from './components/UserProfile';
 import App from './App';
 import "./main.css";
+import Forbidden from './components/Forbidden';
 
 const clientId = '443652869740-1df41cf4e6ikli26qdtg784qcefdf1lu.apps.googleusercontent.com'; // Replace with your actual client ID
 
@@ -34,6 +35,10 @@ const appRouter = createBrowserRouter([
     path: "/signup",
     element: <Signup />,
   },
+  {
+    path: "/forbidden",
+    element: <Forbidden/>
+  }
   
 ]);
 
