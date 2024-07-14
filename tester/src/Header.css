@@ -148,7 +148,7 @@
   }
 
   .books-container {
-    margin-top: 400px; /* Adjust based on the height of your navbar */
+    margin-top: 600px; /* Adjust based on the height of your navbar */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
