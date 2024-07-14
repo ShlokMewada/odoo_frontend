@@ -24,6 +24,10 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
     children:[
       {
+        index: true, // This makes Home the default route
+        element: <Home />
+      },
+      {
         path: "/userprofile",
         element: <UserProfile />,
       },
