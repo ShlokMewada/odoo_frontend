@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BookCards = ({ data }) => {
   // Ensure data is an array
@@ -15,8 +16,8 @@ const BookCards = ({ data }) => {
           <div key={id} className="book-card">
             <img src={small_thumbnail} alt={title} className="book-img" />
             <div className="book-details">
-              <h2 className="book-title">{title}</h2>
-              <p className="book-author">{authors}</p>
+              <Link to="/"><h2 className="book-title text-blue-600">{title}</h2></Link>
+              <Link to="/"><p className="book-author text-blue-600">{authors}</p></Link>
               <p className="book-description text-sm text-gray-700 line-clamp-3">{description}</p>
             </div>
           </div>
