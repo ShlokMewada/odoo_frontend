@@ -7,7 +7,13 @@ const Home = () => {
   useEffect(() => {
     // Mock API call
     const fetchData = async () => {
-      const response = await fetch("");
+      const response = await fetch("https://odoo.detrace.systems/api/users/api/token/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
       const result = await response.json();
 
       // Sort data by id in ascending order
