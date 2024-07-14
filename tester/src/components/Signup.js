@@ -91,8 +91,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="login-container">
-      <p className="title">LOGIN</p>
+    <div className="signup-container">
+      <p className="title">SIGNUP</p>
       
       <form onSubmit={handleSignup}>
       <div className="form-group">

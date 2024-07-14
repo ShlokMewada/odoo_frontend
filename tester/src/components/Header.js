@@ -45,7 +45,7 @@ const Header = () => {
             </div>
           )}
         </nav>
-        <div className="logo">Dummy</div>
+        <div className="logo">BookNest</div>
         {userData != null ? (
           <div className="right-nav">
             <div className="user">Hello {userData.name}</div>

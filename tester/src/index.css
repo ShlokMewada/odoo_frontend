@@ -21,6 +21,17 @@ body, html {
   justify-content: center;
 }
 
+.signup-container {
+  width: 350px;
+  height: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  justify-content: center;
+}
+
 h2 {
   text-align: center;
 }
