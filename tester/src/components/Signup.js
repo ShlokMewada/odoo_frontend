@@ -95,6 +95,18 @@ const Signup = () => {
       <p className="title">LOGIN</p>
       
       <form onSubmit={handleSignup}>
+      <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            value={credentials.name}
+            onChange={(e) =>
+              setCredentials({ ...credentials, name: e.target.value })
+            }
+            placeholder="Name"
+          />
+          {errors.name && <span className="error">{errors.name}</span>}
+        </div>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
@@ -131,18 +143,7 @@ const Signup = () => {
           />
           {errors.email && <span className="error">{errors.email}</span>}
         </div>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            value={credentials.name}
-            onChange={(e) =>
-              setCredentials({ ...credentials, name: e.target.value })
-            }
-            placeholder="Name"
-          />
-          {errors.name && <span className="error">{errors.name}</span>}
-        </div>
+        
         {errors.network && <span className="error">{errors.network}</span>}
         {errors.general && <span className="error">{errors.general}</span>}
         <button type="submit" className="login">SignUp</button>
