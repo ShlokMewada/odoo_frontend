@@ -43,7 +43,7 @@ function GoogleAuth() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>SignIn Using Google</p>
+        <p className="google">SignIn Using Google:</p>
         <span>
           <GoogleLogin
             onSuccess={(credentialResponse) => {

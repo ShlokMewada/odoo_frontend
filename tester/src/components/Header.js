@@ -39,8 +39,9 @@ const Header = () => {
               logout
             </div>
           ) : (
-            <div>
-              <Link to="/login">login</Link>/<Link to="/signup">signup</Link>
+            <div style={{display:"flex"}}>
+              <Link to="/login"><button className="login">Login</button></Link>
+              <Link to="/signup"><button className="login">SignUp</button></Link>
             </div>
           )}
         </nav>

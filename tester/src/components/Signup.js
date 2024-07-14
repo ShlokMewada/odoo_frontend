@@ -92,6 +92,8 @@ const Signup = () => {
 
   return (
     <div className="login-container">
+      <p className="title">LOGIN</p>
+      
       <form onSubmit={handleSignup}>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
@@ -143,7 +145,7 @@ const Signup = () => {
         </div>
         {errors.network && <span className="error">{errors.network}</span>}
         {errors.general && <span className="error">{errors.general}</span>}
-        <button type="submit">Signup</button>
+        <button type="submit" className="login">SignUp</button>
       </form>
     </div>
   );

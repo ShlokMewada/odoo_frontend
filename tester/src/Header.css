@@ -1,10 +1,11 @@
 .header {
+    width: 100%;
     font-family: Arial, sans-serif;
     /* margin-top: -220px; */
     /* margin-top: 40px; */
     position: absolute;
     top: 0px;
-    left: 25%;
+    left: 0%;
     right: 25%;
   }
   
@@ -50,7 +51,7 @@
     align-items: center;
   }
   
-  .user {
+  .login {
     background-color: #6C63FF;
     color: white;
     padding: 5px 10px;

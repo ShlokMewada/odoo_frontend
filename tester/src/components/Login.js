@@ -51,9 +51,11 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <p className="title">LOGIN</p>
+      <hr />
       <form onSubmit={handleLogin}>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username" >Username:</label>
           <input
             type="text"
             value={credentials.username}
@@ -75,7 +77,7 @@ const Login = () => {
           />
         </div>
 
-        <button type="submit">Login</button>
+        <button type="submit" className="submit-button">Login</button>
       </form>
       <div>
         <GoogleAuth/>
