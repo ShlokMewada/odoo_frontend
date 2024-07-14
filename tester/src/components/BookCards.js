@@ -8,7 +8,8 @@ const BookCards = ({ data }) => {
   }
 
   return (
-    <div className="books-container">
+    <div style={{marginLeft:"-100px", width:"fixed"}}>
+      <div className="books-container">
       {data.map((book, index) => {
         const { id, title, authors, description, small_thumbnail } = book;
 
@@ -24,6 +25,8 @@ const BookCards = ({ data }) => {
         );
       })}
     </div>
+    </div>
+    
   );
 };
 
