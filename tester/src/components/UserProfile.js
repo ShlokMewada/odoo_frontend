@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
-import { UserContext } from "./UserContext";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "./UserContext";
 
 const UserProfile = () => {
   const [formData, setFormData] = useState({});
@@ -102,12 +102,11 @@ const UserProfile = () => {
   };
 
   if (loading) return <div>Loading...</div>;
-
   return (
-    <div style={{ padding: "20px", position: "relative", marginTop: "150px" }}>
-      <h2>User Profile</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className="user-profile-container">
+      <h2 className="user-profile-title">User Profile</h2>
+      <form onSubmit={handleSubmit} className="user-profile-form">
+        <div className="form-group">
           <label>Username: </label>
           <input
             type="text"
@@ -115,9 +114,10 @@ const UserProfile = () => {
             value={formData.username || ""}
             onChange={handleChange}
             placeholder={user.username || "Enter username"}
+            className="form-input"
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Name: </label>
           <input
             type="text"
@@ -125,9 +125,10 @@ const UserProfile = () => {
             value={formData.name || ""}
             onChange={handleChange}
             placeholder={user.name || "Enter name"}
+            className="form-input"
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Email: </label>
           <input
             type="email"
@@ -135,14 +136,79 @@ const UserProfile = () => {
             value={formData.email || ""}
             onChange={handleChange}
             placeholder={user.email || "Enter email"}
+            className="form-input"
           />
         </div>
-        <button type="submit" disabled={loading}>
+        <div className="form-group">
+          <label>Role: </label>
+          <input
+            type="text"
+            name="role"
+            value={formData.role || ""}
+            onChange={handleChange}
+            placeholder={user.role || "Enter role"}
+            className="form-input"
+            readOnly // Optional: Make the role field read-only
+          />
+        </div>
+        <button type="submit" className="submit-button" disabled={loading}>
           {loading ? "Saving..." : "Save Profile"}
         </button>
       </form>
     </div>
   );
+
+  // return (
+  //   <div style={{ padding: "20px", position: "relative", marginTop: "150px" }}>
+  //     <h2>User Profile</h2>
+  //     <form onSubmit={handleSubmit}>
+  //       <div>
+  //         <label>Username: </label>
+  //         <input
+  //           type="text"
+  //           name="username"
+  //           value={formData.username || ""}
+  //           onChange={handleChange}
+  //           placeholder={user.username || "Enter username"}
+  //         />
+  //       </div>
+  //       <div>
+  //         <label>Name: </label>
+  //         <input
+  //           type="text"
+  //           name="name"
+  //           value={formData.name || ""}
+  //           onChange={handleChange}
+  //           placeholder={user.name || "Enter name"}
+  //         />
+  //       </div>
+  //       <div>
+  //         <label>Email: </label>
+  //         <input
+  //           type="email"
+  //           name="email"
+  //           value={formData.email || ""}
+  //           onChange={handleChange}
+  //           placeholder={user.email || "Enter email"}
+  //         />
+  //       </div>
+  //       <div>
+  //         <label>Role: </label>
+  //         <input
+  //           type="text"
+  //           name="role"
+  //           value={formData.role || ""}
+  //           onChange={handleChange}
+  //           placeholder={user.role || "Enter role"}
+  //           readOnly // Optional: Make the role field read-only
+  //         />
+  //       </div>
+  //       <button type="submit" disabled={loading}>
+  //         {loading ? "Saving..." : "Save Profile"}
+  //       </button>
+  //     </form>
+  //   </div>
+  // );
 };
 
 export default UserProfile;
