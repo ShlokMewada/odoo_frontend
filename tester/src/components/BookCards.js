@@ -1,16 +1,31 @@
-import React from 'react'
+import React from 'react';
 
-const BookCards = ({bookData}) => {
+const BookCards = ({ data }) => {
+  // Ensure data is an array
+  if (!Array.isArray(data)) {
+    return null;
+  }
+
   return (
-    <div className="flex gap-2">
-      <img src="" alt="" />
-      <div className="flex flex-col gap-1">
-        <h1></h1>
-        <div className="flex"><p></p><p></p><p>No preview</p></div>
-        <p></p>
-      </div>
-    </div>
-  )
-}
+    <>
+      {data.map((book, index) => {
+        const { id, title, authors, description, small_thumbnail } = book;
 
-export default BookCards
+        return (
+          <div key={id} className="book-card flex bg-white shadow-md rounded-lg overflow-hidden mb-4">
+            <div className="thumbnail-container w-1/3">
+              <img src={small_thumbnail} alt={title} className="w-full h-full object-cover" />
+            </div>
+            <div className="book-details w-2/3 p-4">
+              <h2 className="book-title text-xl font-semibold mb-2">{title}</h2>
+              <p className="book-author text-sm text-gray-600 mb-2">{authors}</p>
+              <p className="book-description text-sm text-gray-700 line-clamp-3">{description}</p>
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+export default BookCards;
