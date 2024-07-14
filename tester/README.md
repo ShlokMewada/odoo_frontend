@@ -75,9 +75,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Your Name - your.email@example.com
-
-Project Link: [https://github.com/yourusername/library-management-system](https://github.com/yourusername/library-management-system)
+Project Link: (https://github.com/ShlokMewada/odoo_frontend)
 
 ## Acknowledgements
 
