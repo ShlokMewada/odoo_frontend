@@ -164,6 +164,7 @@ h2 {
   font-size: 25px;
   font-weight: 500;
   color: red;
+  margin-top: 0px;
 }
 
 .save-profile-button{
@@ -172,4 +173,11 @@ h2 {
   color: green;
   width: 100px;
   height: 30px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.save-profile-button:hover{
+  color: white;
+  background-color: green;
 }
