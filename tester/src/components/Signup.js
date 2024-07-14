@@ -8,6 +8,7 @@ const Signup = () => {
     password: "",
     email: "",
     name: "",
+    role: "Customer",
   });
   const [errors, setErrors] = useState({});
   const { setUser } = useContext(UserContext);
@@ -31,6 +32,9 @@ const Signup = () => {
       newErrors.name = "Name is required";
     } else if (credentials.name.length <= 2) {
       newErrors.name = "Name must be greater than 2 characters";
+    }
+    if (!credentials.role) {
+      newErrors.role = "Role is required";
     }
 
     return newErrors;
@@ -91,8 +95,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="login-container">
-      <p className="title">LOGIN</p>
+    <div className="signup-container">
+      <p className="title">SIGNUP</p>
       
       <form onSubmit={handleSignup}>
       <div className="form-group">
@@ -143,12 +147,26 @@ const Signup = () => {
           />
           {errors.email && <span className="error">{errors.email}</span>}
         </div>
-        
+        <div className="form-group">
+          <label htmlFor="role">Role:</label>
+          <select
+            id="role"
+            value={credentials.role}
+            onChange={(e) =>
+              setCredentials({ ...credentials, role: e.target.value })
+            }
+          >
+            <option value="Customer">User</option>
+            <option value="Librarian">Librarian</option>
+          </select>
+          {errors.role && <span className="error">{errors.role}</span>}
+        </div>
         {errors.network && <span className="error">{errors.network}</span>}
         {errors.general && <span className="error">{errors.general}</span>}
         <button type="submit" className="login">SignUp</button>
       </form>
     </div>
+    
   );
 };
 
