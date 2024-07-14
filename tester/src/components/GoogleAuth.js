@@ -157,14 +157,15 @@ function GoogleAuth() {
   return (
     <div className="App">
       <header className="App-header">
-        <p className="google">SignIn Using Google:</p>
+        <h2>Select Your Role</h2>
         <div className="role-selection-container">
-          <h2>Select Your Role</h2>
           <select value={role} onChange={(e) => setRole(e.target.value)}>
             <option value="Customer">User</option>
             <option value="Librarian">Librarian</option>
           </select>
         </div>
+        <p className="google">SignIn Using Google:</p>
+        <div className="googleauth">
         <GoogleLogin
           onSuccess={(credentialResponse) => {
             const credential = credentialResponse.credential;
@@ -188,6 +189,7 @@ function GoogleAuth() {
           }}
         />
         {errors && <span className="error">{errors}</span>}
+        </div>
       </header>
     </div>
   );

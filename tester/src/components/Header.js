@@ -54,13 +54,13 @@ const Header = () => {
           ""
         )}
       </div>
-      <div className="search-bar">
+      {/* <div className="search-bar">
         <input
           type="text"
           className="search-input"
           placeholder="Search millions of photos, fonts, graphics, and more..."
         />
-      </div>
+      </div> */}
       <nav className="bottom-nav">
         <a href="">Home</a>
         {userData != null ? <Link to="/userprofile">UserProfile</Link> : ""}

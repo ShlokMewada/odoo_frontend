@@ -110,6 +110,14 @@ button:hover {
   margin-top: 15px;
 }
 
+.googleauth{
+  margin-left: 250px;
+}
+
+.role-selection-container{
+  margin-left: 350px;
+}
+
 .title{
   text-align: left;
   font-size: 30px;
@@ -127,6 +135,12 @@ button:hover {
   border: 2px solid red;
 }
 
+.home-button:hover{
+  background-color: red;
+  color: white
+}
+
 .horizontal{
   color: black;
 }
+
