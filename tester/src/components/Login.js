@@ -51,8 +51,11 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <p className="title">LOGIN</p>
-      <hr />
+      <div style={{display:"flex"}}>
+        <p className="title">Public Library</p>
+        <button className="home-button">Home</button>
+      </div>
+      <hr className="horizontal" />
       <form onSubmit={handleLogin}>
         <div className="form-group">
           <label htmlFor="username" >Username:</label>
@@ -87,3 +90,4 @@ const Login = () => {
 };
 
 export default Login;
+
