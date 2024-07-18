@@ -6,6 +6,7 @@ import App from './App';
 import AboutUs from './components/AboutUs';
 import BookDetails from './components/BookDetails';
 import BorrowingHistory from './components/BorrowingHistory';
+import ContactUs from './components/ContactUs';
 import Error from "./components/Error";
 import Forbidden from './components/Forbidden';
 import Home from './components/Home';
@@ -61,6 +62,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/bookdetails",
     element: <BookDetails/>
+  },
+  {
+    path: "/contactus",
+    element: <ContactUs/>
   }
   
 ]);

@@ -63,8 +63,7 @@ const Header = () => {
         <Link to="/home">Home</Link>
         {userData != null ? <Link to="/userprofile">UserProfile</Link> : ""}
         <Link to="/about">AboutUs</Link>
-        <a href="">Contact Us</a>
-        <a href="">Cart</a>
+        <a href="/contactus">Contact Us</a>
         <Link to="/borrowing-history">BorrowingHistory</Link>
         <div className="more-dropdown">
           <a href="#more">More</a>
