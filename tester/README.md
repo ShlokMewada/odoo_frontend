@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Library Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This Library Management System is a comprehensive solution for managing book inventories, tracking borrower details, and handling transactions efficiently. It provides features for user management, book inventory management, borrowing system, search and recommendations, notifications, and reporting.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+1. **User Management**
+   - Login/Logout functionality for Admin and Users
+   - Role-based access control: Admin, Librarian, and User roles
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Book Inventory Management**
+   - Add, update, delete, and search for books
+   - Book details: ISBN, title, author, publisher, year, genre, quantity
+   - Real-time availability status
+   - Integration with Google Books API for fetching book details
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Borrowing System**
+   - Checkout process for borrowing books
+   - Return process including due dates and late fees calculation
+   - History tracking for each user's borrowed and returned books
 
-### `npm test`
+4. **Search and Recommendations**
+   - Advanced search options (by title, author, genre, etc.)
+   - Book recommendations based on user history or popular trends
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. **Notifications and Alerts**
+   - Email or SMS notifications for due dates, new arrivals, etc.
+   - Alerts for overdue books and outstanding fees
 
-### `npm run build`
+6. **Reporting**
+   - Generate reports on book usage, overdue items, user activity, etc.
+   - Dashboard for admins and librarians to see real-time statistics
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Frontend: React.js
+- Backend: Node.js with Express.js
+- Database: MongoDB
+- Authentication: JWT (JSON Web Tokens)
+- API Integration: Google Books API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup Instructions
 
-### `npm run eject`
+1. Clone the repository:
+2. Install dependencies:
+3. Set up environment variables:
+Create a `.env` file in the root directory and add the following:
+4. Start the server:
+5. Access the application:
+Open your browser and navigate to `http://localhost:3000`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## System Requirements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- MongoDB (v4 or higher)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Contributing
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+We welcome contributions to improve the Library Management System. Please follow these steps to contribute:
 
-## Learn More
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contact
 
-### Analyzing the Bundle Size
+Project Link: (https://github.com/ShlokMewada/odoo_frontend)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Acknowledgements
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Google Books API](https://developers.google.com/books)
+- [React.js](https://reactjs.org/)
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
+  
